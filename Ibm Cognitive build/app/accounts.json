@@ -1,0 +1,33 @@
+[{
+        "id": 1,
+        "username": "admin",
+        "password": "admin",
+        "name": "James Bautista",
+        "skill": "Java Programmer",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 2,
+        "username": "janjan123",
+        "password": "lancel123",
+        "name": "Janjan Bermudo",
+        "skill": "C# Programmer",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 3,
+        "username": "janjan1234",
+        "password": "lancel1234",
+        "name": "Yobhel Dionisio",
+        "skill": "Node JS Programmer",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 4,
+        "username": "janjan1234",
+        "password": "lancel1234",
+        "name": "Yobhel Dionisio",
+        "skill": "Node JS Programmer",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    }
+]

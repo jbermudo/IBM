@@ -1,0 +1,66 @@
+ $http.get('accounts.json').then(function (response) {
+      $scope.accounts = response.data;
+      let account = response.data;
+      let uname = $scope.username;
+      let pword = $scope.password;
+      let isLogged = false;
+
+      $scope.showError = false; // set Error flag
+      $scope.showSuccess = false; // set Success Flag
+
+      if (uname == null || pword == null) {
+        $scope.showError = true;
+        $scope.error = "Username / Password Required";
+        return false;
+      } else {
+        for (let i in account) {
+          if (uname == account[i].username && pword == account[i].password) {
+            isLogged = true;
+            $scope.error = "Login Success"
+            $timeout(function () {
+            window.location.href = '/dashboard';
+            }, 3000);
+            break;
+          } else {
+            $scope.error = "Invalid Account"
+            continue;
+          }
+        }//for
+      }//else
+
+      //set error or success
+      if (isLogged) {
+        $scope.showError = false;
+        $scope.showSuccess = true;
+      }
+      else {
+        $scope.showError = true;
+        $scope.showSuccess = false;
+      }
+    });
+  }
+
+  
+<h1 class="title">Scientia Pontem System</h1>
+<div class="container" ng-controller="loginCtrl">
+    <form name="myForm" class="text-center border border-light p-5 form-login" action="/">
+        <div ng-show="showError" class="alert alert-danger">
+            {{error}}
+        </div>
+        <div ng-show="showSuccess" class="alert alert-success">
+            {{error}}
+        </div>
+        <div class="items">
+            <p class="h4 mb-4">Employees Login</p>
+        
+            <!-- Username -->
+            <input type="text" id="defaultRegisterFormUsername" ng-model="username" class="form-control mb-4" placeholder="Username">
+
+            <!-- Password -->
+
+            <input type="password" id="defaultRegisterFormPassword" ng-model="password" class="form-control" placeholder="Password">
+
+            <!-- Login button -->
+            <button ng-click="submit()" class="btn btn-info my-4 btn-block"  type="button">Login</button>
+    </form>
+</div>
