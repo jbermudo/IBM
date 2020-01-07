@@ -1,151 +1,121 @@
-/* app css stylesheet */
-
-.bg-light-nav {
-    background-color: white !important;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.mr-auto {
-    margin: 0 auto !important;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: black !important;
-    letter-spacing: 2px;
-    padding: 20px;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-    color: red !important;
-}
-
-.items {
-    margin: auto;
-    width: 50%;
-}
-
-.btn-block {
-    margin: 0 auto;
-    width: 50% !important;
-}
-
-.alert-success {
-    text-align: center;
-    text-transform: uppercase;
-    color: green;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.alert-danger {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: rgb(102, 10, 10);
-}
-
-.form-control {
-    height: 45px !important;
-}
-
-.form-login {
-    width: 50% !important;
-    margin: 0 auto;
-}
-
-.btn-block {
-    height: 50px;
-}
-
-.title {
-    font-size: 30px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.container {
-    padding: 40px !important;
-}
-
-.btn-info {
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-.card-group {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.card-img-top {
-    margin: 0 auto;
-    padding: 45px;
-}
-
-.h4 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.loginForm {
-    margin: 0 auto;
-    width: 30%;
-    border: 1px solid #f4f4f4;
-    padding: 50px;
-}
-
-.btn-primary {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-    text-transform: uppercase;
-}
-
-.spinner-border {
-    animation: spinner-border 1s linear infinite !important;
-}
-
-.menu {
-    cursor: pointer;
-    text-transform: uppercase;
-    padding: 10px;
-    font-weight: 500;
-    float: right;
-    display: inline-block;
-}
-
-.liPro:hover,
-.home:hover {
-    box-shadow: inset 0 0px 0 white, inset 0 -4px 0 black
-}
-
-#controller {
-    display: inline-block;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.card {
-    float: right;
-}
-
-.card-text {
-    text-align: center;
-    font-weight: 500;
-}
-
-ul li {
-    padding: 10px;
-    list-style-type: none;
-    display: inline-block;
-}
-
-.welcome {
-    text-align: center;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 35px;
-}
+    /* app css stylesheet */
+    
+    .bg-light-nav {
+        background-color: white !important;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    .mr-auto {
+        margin: 0 auto !important;
+    }
+    
+    .navbar-light .navbar-nav .nav-link {
+        color: black !important;
+        letter-spacing: 2px;
+        padding: 20px;
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: red !important;
+    }
+    
+    .items {
+        margin: auto;
+        width: 50%;
+    }
+    
+    .btn-block {
+        margin: 0 auto;
+        width: 50% !important;
+    }
+    
+    .alert-success {
+        text-align: center;
+        text-transform: uppercase;
+        color: green;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    
+    .alert-danger {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: rgb(102, 10, 10);
+    }
+    
+    .form-control {
+        height: 45px !important;
+    }
+    
+    .form-login {
+        width: 50% !important;
+        margin: 0 auto;
+    }
+    
+    .btn-block {
+        height: 50px;
+    }
+    
+    .title {
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .container {
+        padding: 40px !important;
+    }
+    
+    .btn-info {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    
+    .h4 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .loginForm {
+        margin: 0 auto;
+        border: 1px solid #f4f4f4;
+        padding: 50px;
+    }
+    
+    .btn-primary {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        text-transform: uppercase;
+    }
+    
+    .spinner-border {
+        animation: spinner-border 1s linear infinite !important;
+    }
+    
+    ul li {
+        padding: 10px;
+        list-style-type: none;
+        display: inline-block;
+    }
+    
+    .welcome {
+        text-align: center;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 35px;
+    }
+    
+    .col {
+        display: inline-table;
+    }
+    
+    .loginC {
+        width: 30%;
+        margin: 0 auto;
+        padding: 20px;
+    }

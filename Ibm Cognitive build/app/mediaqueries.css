@@ -1,0 +1,10 @@
+@media only screen and (max-width: 1300px) {
+    .card {
+        display: table;
+    }
+    .loginC {
+        margin: 0 auto !important;
+        width: auto;
+        padding: 20px;
+    }
+}

@@ -1,9 +1,12 @@
-[{
+[
+    {
         "id": 1,
         "username": "admin",
         "password": "admin",
         "name": "James Bautista",
         "skill": "Java Programmer",
+        "type" : "employee",
+        "resume" : "http://localhost:8000/uploads/james_bautista_resume.docx",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
     },
     {
@@ -12,6 +15,7 @@
         "password": "lancel123",
         "name": "Janjan Bermudo",
         "skill": "C# Programmer",
+        "type" : "employer",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
     },
     {
@@ -20,6 +24,8 @@
         "password": "lancel1234",
         "name": "Yobhel Dionisio",
         "skill": "Node JS Programmer",
+        "type" : "employee",
+        "resume" : "http://localhost:8000/uploads/janjan1234.pdf",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
     },
     {
@@ -28,6 +34,26 @@
         "password": "lancel1234",
         "name": "Yobhel Dionisio",
         "skill": "Node JS Programmer",
+        "type" : "employee",
+        "resume" : "http://localhost:8000/uploads/Yobhel.doc",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 5,
+        "username": "janjan1234",
+        "password": "lancel1234",
+        "name": "Yobhel Dionisio",
+        "skill": "Node JS Programmer",
+        "type" : "employee",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 5,
+        "username": "janjan1234",
+        "password": "lancel1234",
+        "name": "Yobhel Dionisio",
+        "skill": "Node JS Programmer",
+        "type" : "employee",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
     }
 ]
