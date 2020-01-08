@@ -16,7 +16,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 function checkSession() {
     let logged_timestamp = window.localStorage.getItem('logged_timestamp');
     let user_id = window.localStorage.getItem('id');
-    if(logged_timestamp) {
+    if (logged_timestamp) {
         let now = Date.now();
         let session_time = 7; //Days
         //Compute log timestamp if more that 5 mins

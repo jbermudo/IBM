@@ -8,7 +8,9 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'view1/view1.html',
             controller: 'loginCtrl',
             controller: 'Logout',
-            controller: 'Profile'
+            controller: 'Profile',
+            controller: 'userProfile',
+            controller: 'Home'
         })
         .when('/dashboard', {
             templateUrl: 'dashboard.html'
@@ -41,7 +43,7 @@ app.controller('loginCtrl', function($http, $scope, $location, $timeout, $window
                         //post
 
                         isLogged = true;
-                        $scope.error = "Login Success"
+                        $scope.error = "Login Success! Welcome " + account[i].name;
                         $timeout(function() {
                             //Store browser database
                             window.localStorage.setItem('id', account[i].id);
@@ -52,7 +54,7 @@ app.controller('loginCtrl', function($http, $scope, $location, $timeout, $window
                             window.localStorage.setItem('type', account[i].type);
                             window.localStorage.setItem('logged_timestamp', Date.now());
                             window.location.href = '/dashboard';
-                        }, 3000);
+                        }, 2000);
                         break;
 
                     } else {
@@ -83,8 +85,14 @@ app.controller('Logout', function($scope, $location) {
 });
 //profile
 app.controller('Profile', function($scope, $location) {
-    $scope.logout = function() {
+    $scope.profile = function() {
         window.location.href = "/profile";
+    }
+});
+//profile
+app.controller('Home', function($scope, $location) {
+    $scope.home = function() {
+        window.location.href = "/dashboard";
     }
 });
 //getting credentials
@@ -92,21 +100,24 @@ app.controller('Profile', function($scope, $location) {
 app.controller('showCredentials', function($http, $scope) {
     //Check user login exist
     let user_id = window.localStorage.getItem('id');
-    if(!user_id) {
+    if (!user_id) {
         window.location.href = '/index';
     }
     //Get account name from local storage
     let name = window.localStorage.getItem('name');
     document.getElementById("account-name").innerHTML = name;
+
     //Get account type from local storage
     let type = window.localStorage.getItem('type');
     //Iterate accounts
     $http.get('accounts.json').then(function(response) {
-        console.log(response.data);
         let data = response.data;
 
         function card() {
             for (let i in data) {
+                if(type == 'employee'){
+                    console.log("employee");
+                }else{
                 let mainDiv = document.getElementById("controller");
                 let divCol = document.createElement("div");
                 divCol.setAttribute("class", "col-lg-3 col-sm-4");
@@ -131,23 +142,87 @@ app.controller('showCredentials', function($http, $scope) {
                 let downloadBtnTxt = document.createTextNode("Download Resume");
                 downloadBtn.setAttribute("class", "btn-primary");
                 downloadBtn.setAttribute("style", "padding: 10px; display: table; margin: auto auto;");
-                if(!data[i].resume) {
-                    downloadBtn.disabled = true; 
+                if (!data[i].resume) {
+                    downloadBtn.disabled = true;
                 } else {
                     downloadBtn.setAttribute("href", data[i].resume);
                 }
                 downloadBtn.append(downloadBtnTxt);
                 //Append
                 divCard.append(imgEl, pEl, pEl2);
-                if(type == "employer") {
+                if (type == "employer") {
                     divCard.append(downloadBtn);
                 }
                 divCol.append(divCard)
                 mainDiv.append(divCol);
             }
+        }
 
         }
         card();
         $scope.credentials = data;
     })
 })
+
+app.controller("userProfile", function($http, $scope) {
+    //get usernam,image,skill in window localStorage
+    let userName = window.localStorage.getItem('name');
+    let img = window.localStorage.getItem('image');
+    let skill = window.localStorage.getItem('skill');
+
+    //get id of card
+    let card = document.getElementById("card")
+    //create Element image
+    let image = document.createElement("img");
+    image.setAttribute("class","card-img-top");
+    image.setAttribute("src",img);
+    image.setAttribute("alt","Card image cap");
+    //create element div
+    let cardBody = document.createElement("div");
+    cardBody.setAttribute("class","card-body");
+    //create element h5
+    let h5 = document.createElement("card-title");
+    h5.setAttribute("class","card-title");
+    h5.innerHTML = userName;
+    //create element p
+    let p = document.createElement("p");
+    p.setAttribute("class","card-text");
+    p.innerHTML = skill;
+    //append
+    card.append(image, cardBody, h5, p);
+
+}) 
+
+
+app.controller('job', function($http, $scope) {
+    $http.get('jobs.json').then(function(response) {
+    let data = response.data;
+    for(let i in data){
+    let container = document.getElementById("job");
+    let div = document.createElement("div");
+    div.setAttribute("class","jumbotron");
+
+    let span = document.createElement("span");
+    span.setAttribute("class","jobtitle")
+    span.innerHTML = data[i].jobtitle;
+
+    let p = document.createElement("p");
+    p.setAttribute("class","company")
+    p.innerHTML = "<span class='companyDesc'>Company: </span> " + data[i].company;
+
+    let pLoc = document.createElement("p");
+    pLoc.setAttribute("class","location")
+    pLoc.innerHTML = "<span class='spanLoc'><i class='fas fa-map-marker-alt'></i></span> "  + data[i].location;
+
+
+    let pDesc = document.createElement("p");
+    pDesc.setAttribute("class","description")
+    pDesc.innerHTML = "<span class='spanDesc'>Job Description:</span> " + data[i].jobDescription;
+
+    div.append(span,pLoc,p,pDesc)
+
+    container.append(div);
+    }
+    });
+});
+

@@ -3,8 +3,17 @@
         display: table;
     }
     .loginC {
-        margin: 0 auto !important;
+        margin: 20px;
         width: auto;
+    }
+    .loginForm{
+        margin: 0 auto;
         padding: 20px;
+    }
+    .job{
+        width: 100%;
+    }
+    .jumbotron{
+        width: 100%;
     }
 }

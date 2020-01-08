@@ -40,11 +40,11 @@
     },
     {
         "id": 5,
-        "username": "janjan1234",
-        "password": "lancel1234",
+        "username": "asd",
+        "password": "asd",
         "name": "Yobhel Dionisio",
         "skill": "Node JS Programmer",
-        "type" : "employee",
+        "type" : "training center",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
     },
     {

@@ -4,38 +4,48 @@
         background-color: white !important;
         text-transform: uppercase;
         font-weight: 500;
+        padding: 20px;
     }
-    
-    .mr-auto {
-        margin: 0 auto !important;
-    }
-    
     .navbar-light .navbar-nav .nav-link {
         color: black !important;
         letter-spacing: 2px;
-        padding: 20px;
     }
-    
     .navbar-light .navbar-nav .nav-link:hover {
-        color: red !important;
+        color: #ff4f58ff !important;
     }
-    
-    .items {
-        margin: auto;
+    .btn-primary {
         width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        text-transform: uppercase;
+        font-weight: 500;
     }
-    
-    .btn-block {
+    .title {
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .loginForm {
         margin: 0 auto;
-        width: 50% !important;
+
+        padding: 50px;
     }
-    
+    .loginC {
+        padding: 20px;
+        margin: 0 auto;
+        border: 1px solid #f4f4f4;
+    } 
+
+    .spinner-border {
+        animation: spinner-border 1s linear infinite !important;
+    }
     .alert-success {
         text-align: center;
         text-transform: uppercase;
         color: green;
         font-weight: 500;
         letter-spacing: 1px;
+        font-size: 14px;
     }
     
     .alert-danger {
@@ -43,79 +53,68 @@
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 1px;
+        font-size: 13px;
         color: rgb(102, 10, 10);
     }
-    
-    .form-control {
-        height: 45px !important;
-    }
-    
-    .form-login {
-        width: 50% !important;
-        margin: 0 auto;
-    }
-    
-    .btn-block {
-        height: 50px;
-    }
-    
-    .title {
-        font-size: 30px;
-        text-align: center;
-        text-transform: uppercase;
-    }
-    
-    .container {
-        padding: 40px !important;
-    }
-    
-    .btn-info {
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 2px;
-    }
-    
-    .h4 {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-    
-    .loginForm {
-        margin: 0 auto;
-        border: 1px solid #f4f4f4;
-        padding: 50px;
-    }
-    
-    .btn-primary {
+    .jumbotron{
         width: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
-        text-transform: uppercase;
-    }
-    
-    .spinner-border {
-        animation: spinner-border 1s linear infinite !important;
-    }
-    
-    ul li {
-        padding: 10px;
-        list-style-type: none;
-        display: inline-block;
-    }
-    
-    .welcome {
+        padding: 35px;
+        margin: 0 auto;
+        border: 1px solid rgb(219, 214, 214) !important;
+        background-color: white;
         text-align: center;
+        margin-bottom: 15px;
+    }
+    .job{
+        margin: 0 auto;
+        width: 50%;
+        border: 1px solid rgb(219, 214, 214) !important;
+        padding: 10px;
+        border-radius: .3rem;
+        margin-bottom: 15px;
+        
+    }
+    .nav-link{
+        color: black !important; 
         font-weight: 500;
         text-transform: uppercase;
-        font-size: 35px;
+        
+
     }
-    
-    .col {
-        display: inline-table;
+    .nav-link:hover{
+        color: blue !important;
     }
-    
-    .loginC {
-        width: 30%;
-        margin: 0 auto;
-        padding: 20px;
+    .active:active{
+        border-bottom: 4px blue solid;
+    }
+    .jobtitle:hover{
+        cursor: pointer;
+        text-decoration: black underline;
+        color: blue;
+    }
+    .jobtitle{
+        color: blue;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .spanDesc{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .company{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .companyDesc{
+        font-weight: 500;
+    }
+    .location{
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    .modal-header{
+        border-bottom: 1px solid white;
+    }
+    .show{
+        padding: 0px !important;
     }
