@@ -19,8 +19,7 @@
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="mediaqueries.css">
@@ -30,7 +29,8 @@
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light-nav">
-    <a class="navbar-brand" href="#!/index"><img style="height: 40px; border-radius: 50%;" src="./images/skillsbuildlogo.png" /> Skills Bridge</a>
+    <a class="navbar-brand" href="#!/index"><img style="height: 40px; border-radius: 50%;"
+        src="./images/skillsbuildlogo.png" /> Skills Bridge</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#!/view1"  data-toggle="modal" data-target="#staticBackdrop">Login</a>
+          <a class="nav-link" href="#!/view1" data-toggle="modal" data-target="#staticBackdrop">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#!/view2">Register</a>
@@ -93,7 +93,57 @@
   </div>
   <!-- end login -->
 
+
+  <!--jobs start-->
   <div ng-controller="job" id="job" class="container">
+    
+<!-- employer -->
+  <div class="row my-flex-card" style="width: 18rem;     border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem;">
+    <div class="col-lg-4 col-sm-4">
+      <a id="banner_21749" title="SM Mart, Inc."
+        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
+        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
+            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
+      </a>
+    </div>
+    <div class="col-lg-4 col-sm-3">
+      <a id="banner_21749" title="SM Mart, Inc."
+        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
+        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
+            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
+      </a>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+      <a id="banner_21749" title="SM Mart, Inc."
+        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
+        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
+            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
+      </a>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+      <a id="banner_21749" title="SM Mart, Inc."
+        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
+        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
+            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
+      </a>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+      <a id="banner_21749" title="SM Mart, Inc."
+        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
+        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
+            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
+      </a>
+    </div>
+    <div class="col-lg-4 col-sm-4">
+      <a id="banner_21749" title="SM Mart, Inc."
+        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
+        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
+            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
+      </a>
+    </div>
+  </div>
+
+  <!-- end employer -->
     <ul class="nav job">
       <li class="nav-item">
         <a class="nav-link active" href="#job">All Jobs</a>
@@ -102,9 +152,8 @@
         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Jobs in the Philippines</a>
       </li>
     </ul>
-
   </div>
-
+  <!-- end jobs-->
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
