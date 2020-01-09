@@ -39,14 +39,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#!/view1" data-toggle="modal" data-target="#staticBackdrop">Login</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!/view2">Register</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop2">Register</a>
         </li>
       </ul>
     </div>
   </nav>
+
+  <!--jobs start-->
+  <div ng-controller="job" id="job" class="container">
+    <ul class="nav job" ng-controller="active-navlink">
+      <li class="nav-item">
+        <a ng-click="navbarLink('navLink')" id="navLink" class="nav-link" href="#job">All Jobs</a>
+      </li>
+      <li class="nav-item">
+        <a ng-click="navbarLink('navLink2')" id="navLink2" class="nav-link" href="#" tabindex="-1"
+          aria-disabled="true">Jobs in the Philippines</a>
+      </li>
+    </ul>
+    <!-- employer -->
+    <div ng-controller="employerController" id="row-flex-card" class="row my-flex-card"
+      style="width: 18rem; border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem; position: absolute;">
+      <div class="header">
+        <strong>Top Employer</strong>
+      </div>
+    </div>
+    <!-- end employer -->
+  </div>
+  <!-- end jobs-->
 
   <!-- login -->
   <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
@@ -93,30 +115,46 @@
   </div>
   <!-- end login -->
 
-  <!--jobs start-->
-  <div ng-controller="job" id="job" class="container">
-    <ul class="nav job" ng-controller="active-navlink">
-      <li class="nav-item">
-        <a ng-click="navbarLink('navLink')" id="navLink" class="nav-link" href="#job">All Jobs</a>
-      </li>
-      <li class="nav-item">
-        <a ng-click="navbarLink('navLink2')" id="navLink2" class="nav-link" href="#" tabindex="-1"
-          aria-disabled="true">Jobs in the Philippines</a>
-      </li>
-    </ul>
-
-    <!-- employer -->
-
-
-    <div ng-controller="employer" id="row-flex-card" class="row my-flex-card"
-      style="width: 18rem; border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem; position: absolute;">
-      <div class="header">
-        <strong>Top Employer</strong>
+  <div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div ng-controller="loginCtrl" class="loginC">
+            <form class="loginForm">
+              <h1 class="title">Skills Bridge</h1>
+              <div ng-show="showError" class="alert alert-danger">
+                {{error}}
+              </div>
+              <div ng-show="showSuccess" class="alert alert-success">
+                {{error}}
+                <div class="spinner-border spinner-border-sm" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" ng-model="username" class="form-control" id="exampleInputUsername"
+                  aria-describedby="usernameHelp" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" ng-model="password" class="form-control" id="exampleInputPassword1" required>
+              </div>
+              </br>
+              <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- end employer -->
   </div>
-  <!-- end jobs-->
+
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>

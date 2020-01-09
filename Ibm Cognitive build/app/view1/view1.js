@@ -12,7 +12,7 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'userProfile',
             controller: 'Home',
             controller: 'active-navlink',
-            controller: 'employer'
+            controller: 'employerController'
         })
         .when('/dashboard', {
             templateUrl: 'dashboard.html'
@@ -244,8 +244,7 @@ app.controller('active-navlink', function ($scope) {
     }
 })
 
-app.controller("employer", function ($http) {
-
+app.controller("employerController", function ($http) {
     $http.get('employer.json').then(function (response) {
         let data = response.data;
         for (let i in data) {
@@ -259,7 +258,6 @@ app.controller("employer", function ($http) {
             // im.setAttribute("style", "width: 60%; position: absolute;top: 18px;")
             divCol.append(a, im);
             rowflexCard.append(divCol);
-
         }
     })
 })
