@@ -93,65 +93,28 @@
   </div>
   <!-- end login -->
 
-
   <!--jobs start-->
   <div ng-controller="job" id="job" class="container">
-    
-<!-- employer -->
-  <div class="row my-flex-card" style="width: 18rem;     border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem;">
-    <div class="col-lg-4 col-sm-4">
-      <a id="banner_21749" title="SM Mart, Inc."
-        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
-        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
-            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
-      </a>
-    </div>
-    <div class="col-lg-4 col-sm-3">
-      <a id="banner_21749" title="SM Mart, Inc."
-        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
-        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
-            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
-      </a>
-    </div>
-    <div class="col-lg-4 col-sm-4">
-      <a id="banner_21749" title="SM Mart, Inc."
-        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
-        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
-            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
-      </a>
-    </div>
-    <div class="col-lg-4 col-sm-4">
-      <a id="banner_21749" title="SM Mart, Inc."
-        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
-        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
-            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
-      </a>
-    </div>
-    <div class="col-lg-4 col-sm-4">
-      <a id="banner_21749" title="SM Mart, Inc."
-        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
-        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
-            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
-      </a>
-    </div>
-    <div class="col-lg-4 col-sm-4">
-      <a id="banner_21749" title="SM Mart, Inc."
-        href="https://webbanner.jobstreet.com/redirect.asp?id=21749&amp;url=http%3A%2F%2Fbit.ly%2F2WQhLYP">
-        <figure><img data-original="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"
-            class="logo-group lazyload" src="https://www.jobstreet.com.ph/banner/2019/the-store_te.jpg"></figure>
-      </a>
-    </div>
-  </div>
-
-  <!-- end employer -->
-    <ul class="nav job">
+    <ul class="nav job" ng-controller="active-navlink">
       <li class="nav-item">
-        <a class="nav-link active" href="#job">All Jobs</a>
+        <a ng-click="navbarLink('navLink')" id="navLink" class="nav-link" href="#job">All Jobs</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Jobs in the Philippines</a>
+        <a ng-click="navbarLink('navLink2')" id="navLink2" class="nav-link" href="#" tabindex="-1"
+          aria-disabled="true">Jobs in the Philippines</a>
       </li>
     </ul>
+
+    <!-- employer -->
+
+
+    <div ng-controller="employer" id="row-flex-card" class="row my-flex-card"
+      style="width: 18rem; border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem; position: absolute;">
+      <div class="header">
+        <strong>Top Employer</strong>
+      </div>
+    </div>
+    <!-- end employer -->
   </div>
   <!-- end jobs-->
 

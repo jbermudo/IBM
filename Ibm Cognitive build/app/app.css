@@ -84,9 +84,6 @@
     .nav-link:hover{
         color: blue !important;
     }
-    .active:active{
-        border-bottom: 4px blue solid;
-    }
     .jobtitle:hover{
         cursor: pointer;
         text-decoration: black underline;
@@ -117,4 +114,24 @@
     }
     .show{
         padding: 0px !important;
+    }
+    .menu-link-active {
+        border-bottom: 4px blue solid;
+        color: blue !important;
+    }
+    .header{
+        position: absolute;
+        top: -43px;
+        border: 1px solid rgb(219, 214, 214) !important;
+        width: 18rem;
+        border-radius: .3rem;
+        left: 0px;
+        padding: 5px;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    #row-flex-card{
+        margin-top: -35px !important;
     }

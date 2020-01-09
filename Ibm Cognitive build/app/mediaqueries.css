@@ -16,4 +16,10 @@
     .jumbotron{
         width: 100%;
     }
+    #row-flex-card {
+        display: none;
+    }
+    .header{
+        display: none;
+    }
 }
