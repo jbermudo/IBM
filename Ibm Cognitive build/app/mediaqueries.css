@@ -22,5 +22,7 @@
     .header{
         display: none;
     }
-    
+    .head{
+        position: unset;
+    }
 }

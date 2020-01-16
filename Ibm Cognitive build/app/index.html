@@ -29,8 +29,7 @@
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light-nav">
-    <a class="navbar-brand" href="#!/index"><img style="height: 40px; border-radius: 50%;"
-        src="./images/skillsbuildlogo.png" /> Skills Bridge</a>
+    <a class="navbar-brand" href="#!/index"><img style="height: 40px; border-radius: 50%;" src="./images/skillsbuildlogo.png" /> Skills Bridge</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,7 +51,7 @@
   <div ng-controller="job" id="job" class="container">
     <ul class="nav job" ng-controller="active-navlink">
       <li class="nav-item">
-        <a ng-click="navbarLink('navLink')" id="navLink" class="nav-link" href="#job">All Jobs</a>
+        <a ng-click="navbarLink('navLink')" id="navLink" class="nav-link" href="" ng-click="job()">All Jobs</a>
       </li>
       <li class="nav-item">
         <a ng-click="navbarLink('navLink2')" id="navLink2" class="nav-link" href="#" tabindex="-1"
@@ -62,7 +61,7 @@
     <!-- employer -->
     <div ng-controller="employerController" id="row-flex-card" class="row my-flex-card"
       style="width: 18rem; border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem; position: absolute;">
-      <div class="header">
+      <div id="header" class="header">
         <strong>Top Employer</strong>
       </div>
     </div>

@@ -32,3 +32,7 @@ function checkSession() {
     }
 }
 checkSession();
+
+function job(){
+    
+}
