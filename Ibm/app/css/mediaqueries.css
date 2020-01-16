@@ -1,0 +1,28 @@
+@media only screen and (max-width: 1300px) {
+    .card {
+        display: table;
+    }
+    .loginC {
+        margin: 20px;
+        width: auto;
+    }
+    .loginForm{
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .job{
+        width: 100%;
+    }
+    .jumbotron{
+        width: 100%;
+    }
+    #row-flex-card {
+        display: none;
+    }
+    .header{
+        display: none;
+    }
+    .head{
+        position: unset;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <link style="border-radius: 50%;" rel="shortcut icon" type="image/x-icon" href="./images/skillsbuildlogo.png" />
+    <title>Sklls Bridge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/mediaqueries.css">
+</head>
+
+<body>
+
+    <nav ng-controller="Home" class="navbar navbar-expand-lg navbar-light bg-light-menu">
+        <a class="navbar-brand" href="dashboard.html"> <img src="./images/skillsbuildlogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> Skills Bridge</a>        
+        <button class="navbar-toggler" type="button"
+            data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div ng-controller="userProfile" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="ul-navbar" class="navbar-nav ml-auto">
+                <li id="post-job-li" class="nav-item">
+                    <a id="post-job" class="nav-link post-job" href="#" data-toggle="modal"
+                        data-target="#exampleModal">Post a job</a>
+                </li>
+                <li class="nav-item" ng-controller="Logout">
+                    <a class="nav-link" href="#" ng-click="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" style="margin-top: 50px; width: 20rem;">
+                    <img style="padding: 5px;" src="./images/images.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Name: </strong><span>Jesus</span></p>
+                        <p class="card-text"><strong>Age: </strong> <span>19</span></p>
+                        <p class="card-text"><strong>Location: </strong> <span>Taguig</span></p>
+                        <p class="card-text"><strong>Work Experience: </strong> <span>15 Years</span></p>
+                        <p class="card-text"><strong>Degree: </strong> <span>BSIT</span></p>
+                    </div>
+                </div>
+            </div>
+            <div ng-controller="aboutUser" class="col-sm-6">
+                <div class="about">
+                    <label class="label">About me</label>
+                </div>
+                <div id="aboutMecard" style="margin-top: 100px;position: absolute; left: -220px; width: 49.4rem;"
+                    class="card">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--about me end-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./controllers/controller.js"></script>
+    <script>
+        let user_id = window.localStorage.getItem('id');
+        if (!user_id) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+
+</html>

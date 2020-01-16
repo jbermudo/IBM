@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "password": "admin",
+        "name": "James Bautista",
+        "skill": "Java Programmer",
+        "type" : "employer",
+        "company": "IBM",
+        "resume" : "http://localhost:8000/uploads/james_bautista_resume.docx",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 2,
+        "username": "janjan123",
+        "password": "lancel123",
+        "name": "Janjan Bermudo",
+        "skill": "C# Programmer",
+        "type" : "employee",
+        "age" : 19,
+        "location": "Taguig City",
+        "experience": "20 years",
+        "phone": "+639495954682",
+        "degree": "BSIT",
+        "university": "Asia Pacific College",
+        "email": "janjanbermudo@gmail.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    },
+    {
+        "id": 3,
+        "username": "yobhel",
+        "password": "yobhel123",
+        "name": "Yobhel Dionisio",
+        "skill": "Node JS Programmer",
+        "type" : "trainingCenter",
+        "age" : 19,
+        "location": "Taguig City",
+        "experience": "20 years",
+        "phone": "+639495954682",
+        "degree": "BSIT",
+        "university": "Asia Pacific College",
+        "email": "janjanbermudo@gmail.com",
+        "resume" : "http://localhost:8000/uploads/janjan1234.pdf",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwH6DalS_KpcvdezZT-tymCO2Spog0pW1g8ySWMhAPAohnxKNJ&s"
+    }
+]
