@@ -1,0 +1,188 @@
+'use strict';
+
+const ClientIdentity = require('fabric-shim').ClientIdentity;
+const crypto  = require('crypto');
+var NodeRSA = require('node-rsa');
+var key = new NodeRSA().generateKeyPair();
+const algo = 'SHA256';
+const algoEncDec = 'aes-256-cbc';
+const passphrase = "passwordSecret";
+
+class Utility{
+
+  static getUserId(ctx){
+    const cid = new ClientIdentity(ctx.stub);
+    return cid.getUSERID();
+  }
+
+  static assertUserId(ctx, mspId){
+    const cid = new ClientIdentity(ctx.stub);
+    return mspId == cid.getTCID();
+  }
+
+  static assertMspId(ctx, mspId){
+    const cid = new ClientIdentity(ctx.stub);
+    return mspId == cid.getUSERID();
+  }
+
+  static getTcId(ctx){
+    const cid = new ClientIdentity(ctx.stub);
+    return cid.getUSERID();
+  }
+
+  static bytesToJson(bytes){
+    if (bytes == null || bytes.length === 0)
+      return null;
+    
+    return JSON.parse(bytes.toString())
+  }
+
+  static jsonToBytes(json){
+    if (json == null)
+      return null;
+
+    return Buffer.from(JSON.stringify(json));
+  }
+
+  static generatePubPrivKeys() {
+    var publicKey = key.exportKey('pkcs8-public-pem');
+    var privateKey = key.exportKey('pkcs1-pem');
+    
+    return {publicKey, privateKey}
+  }
+
+  static encryptDataSym(toEncrypt, publicKey) {
+    var mykey = crypto.createCipher(algoEncDec, publicKey);
+    var encrypted = mykey.update(toEncrypt, 'utf8', 'base64');
+    encrypted += mykey.final('base64');
+    return encrypted;
+  }
+
+  static decryptDataSym(toDecrypt, publicKey) {
+    var mykey = crypto.createDecipher(algoEncDec, publicKey);
+    var decrypted = mykey.update(toDecrypt, 'base64', 'utf8');
+    decrypted += mykey.final('utf8');
+    return decrypted;
+  }
+
+  static pubEncryptASYM(originMSG, publicKey) {
+    var buffer = new Buffer.from(originMSG, 'utf8');
+    var encMsg = crypto.publicEncrypt(publicKey, buffer);
+    console.log("\nEncrypted with public key : ", encMsg.toString("base64"));
+    return encMsg.toString("base64");
+  }
+
+  static privDecryptASYM(encMsg, privateKey) {
+//    var privKey = privateKey;
+    var buffer = new Buffer.from(encMsg, "base64");
+    // var privK = {
+    //     key: privKey,
+    //     passphrase: passphrase
+    // }
+    // var decryptedMsg = crypto.privateDecrypt(privK, encMsg);
+    const decryptedMsg = crypto.privateDecrypt(
+      {
+          key: privateKey.toString(),
+          passphrase: passphrase,
+      },
+      buffer,
+    )
+  console.log("decrypted msg : ", decryptedMsg.toString("utf8"));
+    return decryptedMsg.toString("utf8");
+  }
+
+  static createHashValue(data) {
+    return crypto.createHmac(algo, passphrase).update(data).digest('base64');
+//    return hash1;
+  }
+
+  static async getState(ctx, key){
+    const bytes = await ctx.stub.getState(key);
+    return this.bytesToJson(bytes);
+  }
+
+  static async putState(ctx, key, json){
+    await ctx.stub.putState(key, this.jsonToBytes(json));
+  }
+
+  static async getPrivateData(ctx, collectionName, key){
+    const bytes = await ctx.stub.getPrivateData(collectionName, key);
+    return this.bytesToJson(bytes);
+  }
+
+  static async putPrivateData(ctx, collectionName, key, json){
+    await ctx.stub.putPrivateData(collectionName, key, this.jsonToBytes(json));
+  }
+
+  static async getQueryResult(ctx, jsonQuery) {
+    console.info('============= UTILITY START : GET QUERY RESULT =============');
+    console.info("jsonQuery: " + JSON.stringify(jsonQuery, null, 4));
+
+    let strQuery = JSON.stringify(jsonQuery);
+    let resultIterator = await ctx.stub.getQueryResult(strQuery);
+
+    let resultArr = await Utility.iteratorToArrayResult(resultIterator, false);
+
+    console.info('======== UTILITY END : GET QUERY RESULT =============');
+    return resultArr;
+  }
+
+  static async getTransactionHistory(ctx, key) {
+    console.info('============= UTILITY START : GET TRANSACTION HISTORY =============');
+
+    let resultIterator = await ctx.stub.getHistoryForKey(key);
+
+    let resultArr = await Utility.iteratorToArrayResult(resultIterator, true);
+
+    console.info('============= UTILITY END : GET TRANSACTION HISTORY =============');
+    return resultArr;
+  }  
+
+  static async iteratorToArrayResult(iterator, isHistory) {
+    console.info('============= UTILITY START : Iterator to Array Result =============');
+    let arr = [];
+    while (true) {
+      let res = await iterator.next();
+
+      if (res.value && res.value.value.toString()) {
+        let jsonRes = {};
+        //console.log(res.value.value.toString('utf8'));
+
+        if (isHistory && isHistory === true) {
+          jsonRes.TxId = res.value.tx_id;
+          jsonRes.Timestamp = res.value.timestamp;
+          jsonRes.IsDelete = res.value.is_delete.toString();
+
+          for(let key in res.value)
+            console.info("key:"+key)
+
+
+          try {
+            jsonRes.Value = JSON.parse(res.value.value.toString('utf8'));
+          } catch (err) {
+            console.log(err);
+            jsonRes.Value = res.value.value.toString('utf8');
+          }
+        } else {
+          jsonRes.Key = res.value.key;
+          try {
+            jsonRes.Record = JSON.parse(res.value.value.toString('utf8'));
+          } catch (err) {
+            console.log(err);
+            jsonRes.Record = res.value.value.toString('utf8');
+          }
+        }
+        arr.push(jsonRes);
+      }
+      if (res.done) {
+        await iterator.close();
+        console.info("arr: "+JSON.stringify(arr, null, 4));
+        console.info('============= UTILITY END : Iterator to Array Result =============');
+        return arr;
+      }
+    }
+  }
+}
+
+
+module.exports = Utility;

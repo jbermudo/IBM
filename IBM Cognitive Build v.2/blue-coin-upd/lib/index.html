@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <link style="border-radius: 50%;" rel="shortcut icon" type="image/x-icon" href="./images/skillsbuildlogo.png" />
+    <title>Sklls Bridge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/mediaqueries.css">
+</head>
+
+<body>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light-nav">
+        <a class="navbar-brand" href="#"> <img src="./images/skillsbuildlogo.png" width="30" height="30"
+                class="d-inline-block align-top" alt=""> Skills Bridge</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop2">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Navbar End-->
+
+    <!-- login -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div ng-controller="loginCtrl" class="loginC">
+                        <form class="loginForm">
+                            <h1 class="title">Skills Bridge Login</h1>
+                            <div ng-show="showError" class="alert alert-danger">
+                                {{error}}
+                            </div>
+                            <div ng-show="showSuccess" class="alert alert-success">
+                                {{error}}
+                                <div class="spinner-border spinner-border-sm" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Userid</label>
+                                <input type="text" ng-model="username" class="form-control" id="exampleInputUsername"
+                                    aria-describedby="usernameHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" ng-model="password" class="form-control"
+                                    id="exampleInputPassword1" required>
+                            </div>
+                            <div class="form-group">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                            </br>
+                            <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end login -->
+
+    <!-- register -->
+    <div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div ng-controller="loginCtrl" class="loginC">
+                        <form class="loginForm">
+                            <h1 class="title">Skills Bridge Register</h1>
+                            <div ng-show="showError" class="alert alert-danger">
+                                {{error}}
+                            </div>
+                            <div ng-show="showSuccess" class="alert alert-success">
+                                {{error}}
+                                <div class="spinner-border spinner-border-sm" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Userid</label>
+                                <input type="text" ng-model="account.userid" class="form-control"
+                                    id="exampleInputUsername" aria-describedby="usernameHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Firstname</label>
+                                <input type="text" ng-model="account.firstname" class="form-control"
+                                    id="exampleInputUsername" aria-describedby="usernameHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Lastname</label>
+                                <input type="text" ng-model="account.lastname" class="form-control"
+                                    id="exampleInputUsername" aria-describedby="usernameHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" ng-model="account.email" class="form-control"
+                                    id="exampleInputUsername" aria-describedby="usernameHelp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" ng-model="account.password" class="form-control"
+                                    id="exampleInputPassword1" required>
+                            </div>
+                            <select id="selection">
+                                <option value="employer">Employer</option>
+                                <option value="jobseeker">Jobseeker</option>
+                                <option value="trainingcenter">Training Center</option>
+                            </select>
+                            <div class="form-group">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                            </br>
+                            <button type="submit" class="btn btn-primary" ng-click="registerJobseeker(account)">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end register -->
+
+
+    <!-- <form ng-controller="loginCtrl">
+        <input ng-model="account.userid" />
+        <input ng-model="account.firstname" />
+        <input ng-model="account.lastname" />
+        <input ng-model="account.password" />
+        <input ng-model="account.type" />
+        <label>training center</label>
+
+
+        <button ng-click="registerJobseeker(account)">Submit</button>
+    </form> -->
+
+    <!--jobs start-->
+    <div ng-controller="job" id="job" class="container">
+        <ul class="nav job" ng-controller="active-navlink">
+            <li class="nav-item">
+                <a ng-click="navbarLink('navLink')" id="navLink" class="nav-link" href="" ng-click="job()">All Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a ng-click="navbarLink('navLink2')" id="navLink2" class="nav-link" href="#" tabindex="-1"
+                    aria-disabled="true">Jobs in the Philippines</a>
+            </li>
+        </ul>
+        <!-- employer -->
+        <div ng-controller="employerController" id="row-flex-card" class="row my-flex-card"
+            style="width: 18rem; border: 1px solid rgb(219, 214, 214) !important; border-radius: .3rem; position: absolute;">
+            <div id="header" class="header">
+                <strong>Top Employers</strong>
+            </div>
+        </div>
+        <br>
+        <!-- end employer -->
+    </div>
+    <!-- end jobs-->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./controllers/controller.js"></script>
+    <!-- <script src="./BlueCoinContract.js"></script>     -->
+    <script>
+        let user_id = window.localStorage.getItem('id');
+        if (user_id) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+
+</html>

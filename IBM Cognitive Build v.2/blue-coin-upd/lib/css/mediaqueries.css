@@ -1,0 +1,97 @@
+@media only screen and (max-width: 1300px) {
+    .card {
+        display: table;
+    }
+    .loginC {
+        margin: 20px;
+        width: auto;
+    }
+    .loginForm{
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .job{
+        width: 100%;
+    }
+    .jumbotron{
+        width: 100%;
+    }
+    #row-flex-card {
+        display: none;
+    }
+    .header{
+        display: none;
+    }
+    .head{
+        position: unset;
+    }
+    .card-img{
+        margin: 0 auto;
+    }
+    .label{
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        position: unset !important; 
+        top: 0;
+        left: 0;
+      
+    }#aboutMecard{
+        position: unset !important;
+        width: 33.9rem !important;
+        margin-top: 10px !important;
+    }.card-text{
+        margin-right: 0px !important;
+    }.text{
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+@media only screen and (max-width: 770px) {
+    .label{
+        margin-left: 60px;
+        margin-top: 50px;
+
+    }
+}
+@media only screen and (max-width: 575px) {
+    .label{
+        margin-left: 0px;
+        margin-top: 10px;
+
+      
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #aboutMecard{
+    width: 28.2rem !important;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #aboutMecard{
+    width: 20.6rem !important;
+    float: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 770px) {
+    .label {
+        margin-left: 0px !important;
+    }
+}
+
+
+@media only screen and (max-width: 766px) {
+    .label {
+        margin-left: 60px !important;
+    }
+    #aboutMecard{
+        width: 0rem !important;
+        margin-left: 55px;
+    }
+}
